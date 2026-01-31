@@ -8,7 +8,7 @@ export const ABOUT_ME = {
   location: "New Delhi, India",
   email: "jhaabhinesh977@gmail.com",
   description: [
-    "Hi, I'm Abhinesh Jha, a backend-focused software engineer with a strong foundation in Java and Spring Boot. I enjoy building scalable, production-grade systems and working close to the core of how things function—APIs, databases, concurrency, and system performance.",
+    "Hi, I'm Abhinesh Jha, a backend-focused software engineer with a strong foundation in Java and Go. I enjoy building scalable, production-grade systems and working close to the core of how things function—APIs, databases, concurrency, and system performance.",
     "My coding journey started with a curiosity for how real-world applications handle scale and reliability. Over time, I've worked on projects involving RESTful APIs, transaction management, socket programming, and secure systems, always aiming to write clean, efficient, and maintainable code.",
     "I love building backend systems that solve practical problems, contributing to open-source projects, and continuously deepening my understanding of system design, performance optimization, and distributed systems."
   ],

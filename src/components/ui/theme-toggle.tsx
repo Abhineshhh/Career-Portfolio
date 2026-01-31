@@ -14,19 +14,19 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="p-2 text-sm rounded-md bg-background box border border-border">
-        <div className="w-4 h-4" /> {/* Matches icon size */}
+      <div className="p-2 text-muted-foreground">
+        <div className="w-4 h-4" />
       </div>
     );
   }
 
   return (
     <button
-      className="p-2 text-sm rounded-md bg-background box border border-border"
+      className="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
+      {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
     </button>
   );
 }

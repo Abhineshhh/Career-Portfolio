@@ -7,7 +7,7 @@ export default function OpenSource() {
   const contributions = OPEN_SOURCE.filter(item => item.type === 'contribution');
 
   return (
-    <section className="py-10 border-t border-border/5" id="open-source">
+    <section className="py-10 border-t border-border/[0.03]" id="open-source">
       {/* Header */}
       <div className="flex flex-col gap-1 mb-8">
         <h2 className="text-xl font-semibold">open source.</h2>
@@ -16,7 +16,7 @@ export default function OpenSource() {
 
       {/* Achievements Section */}
       <div className="flex mb-6">
-        <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center shrink-0 mr-4">
+        <div className="w-10 h-10 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 mr-4">
           <Trophy className="w-5 h-5" />
         </div>
         <div>
@@ -48,7 +48,7 @@ export default function OpenSource() {
       {/* Contributions Section */}
       {contributions.map((item, index) => (
         <div key={index} className="flex">
-          <div className="w-10 h-10 rounded-full bg-muted text-foreground flex items-center justify-center shrink-0 mr-4">
+          <div className="w-10 h-10 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0 mr-4">
             <GitMerge className="w-5 h-5" />
           </div>
           <div>

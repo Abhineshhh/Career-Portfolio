@@ -28,6 +28,36 @@ const ProfileImage = () => (
 );
 
 // =============================================
+// KEYWORD HIGHLIGHTING FOR BIO
+// =============================================
+const HIGHLIGHTED_KEYWORDS: Record<string, string> = {
+  "Java": "text-orange-500",
+  "Go": "text-cyan-500",
+};
+
+const highlightKeywords = (text: string) => {
+  // Sort keywords by length (longest first) to avoid partial matches
+  const sortedKeywords = Object.keys(HIGHLIGHTED_KEYWORDS).sort((a, b) => b.length - a.length);
+  
+  // Create regex pattern with case-insensitive matching
+  const pattern = new RegExp(`(${sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+  
+  const segments = text.split(pattern);
+  
+  return segments.map((segment, index) => {
+    const matchedKey = sortedKeywords.find(k => k.toLowerCase() === segment.toLowerCase());
+    if (matchedKey && HIGHLIGHTED_KEYWORDS[matchedKey]) {
+      return (
+        <span key={index} className={`${HIGHLIGHTED_KEYWORDS[matchedKey]} font-medium`}>
+          {segment}
+        </span>
+      );
+    }
+    return segment;
+  });
+};
+
+// =============================================
 // SOCIAL LINKS DATA
 // =============================================
 const SOCIAL_ICONS = [
@@ -192,8 +222,8 @@ const Header = () => {
       {/* Bio Description */}
       <div className="mb-6 space-y-3">
         {ABOUT_ME.description.map((paragraph, index) => (
-          <p key={index} className="text-[15px] sm:text-base text-foreground leading-relaxed">
-            {paragraph}
+          <p key={index} className="text-[15px] sm:text-base text-foreground leading-relaxed font-[var(--font-serif)]">
+            {highlightKeywords(paragraph)}
           </p>
         ))}
       </div>

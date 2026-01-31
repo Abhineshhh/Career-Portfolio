@@ -16,7 +16,7 @@ const Skills = () => {
   const skillIconsUrl = `https://skillicons.dev/icons?i=${iconsParam}&theme=light`;
   
   return (
-    <section className="py-10 border-t border-border/5" id="skills">
+    <section className="py-10 border-t border-border/[0.03]" id="skills">
       <div className="flex flex-col gap-1 mb-8">
         <h2 className="text-xl font-semibold text-foreground">technologies & tools.</h2>
         <p className="text-sm text-muted-foreground font-mono">my tech stack</p>

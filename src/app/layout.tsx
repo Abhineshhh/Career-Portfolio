@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next";
@@ -13,8 +13,15 @@ const inter = Inter({
   preload: true,
 });
 
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
-  title: `${ABOUT_ME.name} - ${ABOUT_ME.title}`,
+  title: "abhinesh",
   description: ABOUT_ME.description[0],
   keywords: [
     ABOUT_ME.name,
@@ -108,7 +115,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} ${sourceSerif.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PageLoader />
           {children}

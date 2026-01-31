@@ -44,7 +44,7 @@ const getTechStyle = (tech: string) => {
 
 export default function Projects() {
   return (
-    <section className="py-10 border-t border-border/5" id="projects">
+    <section className="py-10 border-t border-border/[0.03]" id="projects">
       <div className="flex flex-col gap-1 mb-8">
         <h2 className="text-xl font-semibold">featured projects.</h2>
         <p className="text-sm text-muted-foreground font-mono">things I&apos;ve built</p>
